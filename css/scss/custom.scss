@@ -1,0 +1,10 @@
+@import '_colors';
+@import '_mixins';
+@import '_typography';
+@import '_scoreboards';
+@import '_playingspace';
+
+body {
+	background-image: url('../img/assets/background.jpg');
+	background-position: top center;
+}

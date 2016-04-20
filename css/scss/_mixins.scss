@@ -1,0 +1,9 @@
+@mixin shaddow($value: 0 0 10px -2px #000) {
+	box-shadow: $value;
+}
+
+@mixin border-radius($value: 7px) {
+	-webkit-border-radius: $value;
+	   -moz-border-radius: $value;
+	        border-radius: $value;
+}

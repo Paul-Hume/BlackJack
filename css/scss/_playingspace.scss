@@ -1,0 +1,21 @@
+.playingSpace {
+	margin-bottom: 20px;
+	padding: 10px 10px 0 10px;
+
+	border: 2px dotted #000;
+
+	@include border-radius();
+
+	img {
+		width: 60px;
+		margin-bottom: 10px;
+
+		@media(min-width: 768px) {
+			width: 70px;
+		}
+
+		@media(min-width: 992px) {
+			width: 100px;
+		}
+	}
+}

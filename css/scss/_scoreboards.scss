@@ -1,0 +1,31 @@
+#scoreBoard {
+	.scores {
+		section {
+			margin-bottom: 10px;
+
+			border: 2px solid #000;
+			background-color: #fff;
+
+			@include shaddow();
+			@include border-radius();
+
+			h4 {
+				padding-bottom: 5px;
+
+				text-align: center;
+
+				border-bottom: 1px solid #000;
+			}
+
+			p {
+				text-align: center;
+
+				font-size: 2em;
+			}
+		}
+
+		button {
+			margin-bottom: 10px;
+		}
+	}
+}
