@@ -20,7 +20,7 @@ This is a simple little BlackJack game.
 
 ## Release Notes
 
-### Version 1.0.0
+### Version 1.0.1
 
 | Bugs #  | Description                                       | Status |
 | ------- | ------------------------------------------------- | ------ |
