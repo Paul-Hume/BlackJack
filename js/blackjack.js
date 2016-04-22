@@ -130,6 +130,10 @@ function deal() {
     deck = [];
     deck = cards.slice();
 
+    // Reset ace flags
+    player.hasAce = false;
+    dealer.hasAce = false;
+
     // Remove score highlights
     $('#dealerScore').removeClass('bg-primary');
     $('#playerScore').removeClass('bg-primary');
