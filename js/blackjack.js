@@ -126,6 +126,8 @@ function giveCards(person, num) {
 
 function deal() {
 
+    $('#dealerMatchScore').addClass('hidden');
+
     // Reset the deck
     deck = [];
     deck = cards.slice();
@@ -154,22 +156,43 @@ function deal() {
 
 function dealerTurn() {
 
-    // Remove card placeholders
-    $(dealer.cardspace).html('');
-
     // While dealer scores less than n twist another card
     for (var i = dealer.matchScore; i < 17 && !dealer.isBust;) {
         giveCards(dealer, 1);
         i = dealer.matchScore;
     }
 
+    // Remove card placeholders
+    $(dealer.cardspace).html('<li><img src="img/cards/back.png"></li><li><img src="img/cards/back.png"></li>');
+
+    dealer.hand.reverse();
+
+    (function loop(i) {
+        setTimeout(function () {
+
+            if (i == dealer.hand.length) {
+                $(dealer.cardspace).html('');
+            }
+            $(dealer.cardspace).append('<li><img src="img/cards/' + dealer.hand[i - 1].img + '"></li>');
+
+            if (--i) {
+                loop(i);
+            } else {
+                endMatch(); // iteration counter
+            }
+        }, 1000) // delay
+    })(dealer.hand.length); // iterations count
+
     // End the match
-    endMatch();
+
 }
 
 function endMatch() {
 
     // Compare scores to see who wins
+
+    $('#dealerMatchScore').removeClass('hidden');
+
     if (dealer.matchScore > player.matchScore) {
         dealer.totalScore += 1;
         $('#dealerScore').html(dealer.totalScore).addClass('bg-primary');
