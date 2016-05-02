@@ -57,6 +57,31 @@ cards.push (
 
 )
 
+function alertObj() {
+
+    this.show = function(options) {
+        // Set the type and text for the alert
+        this.type = options.type || 'success';
+        this.text = options.text || 'Notification text here';
+
+        // Remove previous classes
+        $('#userAlert').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-info');
+
+        // Set the alert type and text
+        $('#userAlert').addClass('alert-' + this.type).html(this.text);
+
+        // Display the allert
+        $('#userAlert').removeClass('hidden');
+    }
+
+    this.hide = function() {
+        $('#userAlert').addClass('hidden');
+    }
+}
+
+var alert = new alertObj();
+
+
 // Setup player and deck variables
 var deck = [];
 var dealer = {
@@ -126,6 +151,8 @@ function giveCards(person, num) {
 
 function deal() {
 
+    alert.hide();
+
     $('#dealerMatchScore').addClass('hidden');
 
     // Reset the deck
@@ -190,15 +217,18 @@ function dealerTurn() {
 function endMatch() {
 
     // Compare scores to see who wins
-
     $('#dealerMatchScore').removeClass('hidden');
 
     if (dealer.matchScore > player.matchScore) {
         dealer.totalScore += 1;
         $('#dealerScore').html(dealer.totalScore).addClass('bg-primary');
+        alert.show({type: 'info', text: 'Dealer wins'});
     } else if (player.matchScore > dealer.matchScore) {
         player.totalScore += 1;
         $('#playerScore').html(player.totalScore).addClass('bg-primary');
+        alert.show({type: 'success', text: 'Congratulations, you win!!!'});
+    } else {
+        alert.show({type: 'info', text: 'DRAW - No body won that round'});
     }
 }
 
