@@ -5,19 +5,14 @@ This is a simple little BlackJack game.
 ## URLs
 * [Live Preview](http://www.paulhume.co.uk/demos/blackjack)
 
-## The Team
-
-| Role      | Name          |                                                |
-| --------- | ------------- | ---------------------------------------------- |
-| Developer | Paul Hume     | [@paul_a_hume](http://twitter.com/paul_a_hume) |
-
 ## Version History
 
-| Version | Description         | Status      | Planned Release | Final Release Date |
-| ------- | ------------------- | ----------- | :-------------: | :----------------: |
-| 1.1.0   | Various Updates     | Stable      |                 | 02/05/2016         |
-| 1.0.1   | Bug Fixes           | Stable      |                 | 22/04/2016         |
-| 1.0.0   | First Release       | Stable      |                 | 20/04/2016         |
+| Version | Description             | Status      | Planned Release | Final Release Date |
+| ------- | ----------------------- | ----------- | :-------------: | :----------------: |
+| 1.2.0   | Converted to Angular JS | Stable      |                 | 12/01/2017         |
+| 1.1.0   | Various Updates         | Stable      |                 | 02/05/2016         |
+| 1.0.1   | Bug Fixes               | Stable      |                 | 22/04/2016         |
+| 1.0.0   | First Release           | Stable      |                 | 20/04/2016         |
 
 ## Release Notes
 
